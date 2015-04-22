@@ -9,6 +9,6 @@ namespace CM.Core.Services
     public interface ITeachers 
     {
         int GetTeacherId();
-        void SetTeacherId(int TeacherId);
+        void SetTeacherId(int teacherId);
     }
 }

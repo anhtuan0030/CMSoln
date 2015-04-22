@@ -63,13 +63,16 @@ namespace CM.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int background = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int monoandroidsplash = 2130837505;
+			public const int Icon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int splash = 2130837506;
+			public const int monoandroidsplash = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int splash = 2130837507;
 			
 			static Drawable()
 			{
@@ -116,7 +119,10 @@ namespace CM.Droid
 			public const int SplashScreen = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int TeacherView = 2130903044;
+			public const int StudentView = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int TeacherView = 2130903045;
 			
 			static Layout()
 			{

@@ -109,6 +109,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\FirstView.cs" />
     <Compile Include="Views\ListTeacherView.cs" />
+    <Compile Include="Views\StudentView.cs" />
     <Compile Include="Views\TeacherView.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,9 @@
     </AndroidResource>
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\FirstView.axml" />
+    <AndroidResource Include="Resources\layout\StudentView.axml">
+      <SubType>AndroidResource</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -136,6 +140,7 @@
     <AndroidResource Include="Resources\values\SplashStyle.xml" />
     <AndroidResource Include="Resources\values\MvxBindingAttributes.xml" />
     <AndroidResource Include="Resources\drawable\splash.png" />
+    <AndroidResource Include="Resources\drawable\background.jpg" />
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

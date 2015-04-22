@@ -8,7 +8,7 @@ namespace CM.Core.Services
 {
     public interface IStudent 
     {
-        //int GetTeacherId();
-        //void SetTeacherId(int TeacherId);
+        int GetStudentId();
+        void SetStudentId(int studentId);
     }
 }

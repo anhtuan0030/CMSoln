@@ -8,6 +8,8 @@ namespace CM.Core.Services
 {
     public interface IStudentService
     {
-        //Task<IEnumerable<ITeachers>> GetTeachers();
+        Task<IStudent> GetByUserName(string userName, string password);
+
+        Task<IStudent> GetById(int studentId);
     }
 }

@@ -16,7 +16,6 @@ namespace CM.Droid
 
         protected override IMvxApplication CreateApp()
         {
-            // Mvx.RegisterType(typeof(ITeacherService), typeof(TeacherService));
             CreatableTypes()
                .EndingWith("Service")
                .AsInterfaces()
@@ -32,28 +31,14 @@ namespace CM.Droid
 
     public class App : Core.App
     {
-        private const string AppKey = "HBRj11q16Ma3RjHgYbEkvlqCJXf9M6ukw0jJcfsT";
-        private const string AppRestKey = "qRht3wqVKvISvnsm20Z2K960dqZfn9cBBa4fxl00";
-        private const string DotNetKey = "HwCpVJvemedpvSIIYTve46Yp6QIkRQ9xirYfzHaV";
         public override void Initialize()
-        {
-
-            //ParseObject.RegisterSubclass<Teachers1>();
-           // ParseClient.Initialize(AppKey, DotNetKey);
-         
+        {         
             base.Initialize();
 
-   //CreatableTypes()
-   //             .EndingWith("Service")
-   //             .AsInterfaces()
-   //             .RegisterAsLazySingleton();
-
             Mvx.RegisterType(typeof(ITeacherService), typeof(TeacherService));
+            Mvx.RegisterType(typeof(IStudentService), typeof(StudentService));
 
             //var result = Mvx.Resolve<ITeacherService>();
-
-            //RegisterAppStart<FirstViewModel>();
-            //RegisterAppStart<ListTeacherViewModel>();
         }
 
     }

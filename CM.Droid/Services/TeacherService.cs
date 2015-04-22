@@ -37,14 +37,8 @@ namespace CM.Core.Services
 
             var result = await query.FirstOrDefaultAsync();
 
-            //var query = from teacher in ParseObject.GetQuery("Teachers")
-            //            where teacher.Get<int>("TeacherId") == teacherId
-            //            select teacher;
-            //var result = (ITeachers)await query.FirstAsync();
-
             return result;
         }
-
     }
 
     [ParseClassName("Teachers")]
