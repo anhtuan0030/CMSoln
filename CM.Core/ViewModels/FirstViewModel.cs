@@ -26,7 +26,7 @@ namespace CM.Core.ViewModels
 
         private void DoViewStudent()
         {
-            ShowViewModel<StudentViewModel>();   
+            //ShowViewModel<StudentViewModel>();   
         }
 
 
@@ -58,7 +58,7 @@ namespace CM.Core.ViewModels
 
         private void DoViewCourse()
         {
-            ShowViewModel<CourseViewModel>();
+            //ShowViewModel<CourseViewModel>();
         }
 
     }

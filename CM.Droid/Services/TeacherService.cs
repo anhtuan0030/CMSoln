@@ -29,21 +29,98 @@ namespace CM.Core.Services
             return result;
         }
 
-        public async Task<ITeachers> GetTeachers()
+        public async Task<ITeachers> GetById(int teacherId)
         {
-            var query = new ParseQuery<Teachers>();
-
-            
-
-            //var query = 
-            //from userTable in ParseUser.Query
-            //where contactNumbers.Contains( userTable.Get<string>("mobile") )
-            //select userTable;
+            var query = from teacher in new ParseQuery<Teachers>()
+                        where teacher.TeacherId == teacherId
+                        select teacher;
 
             var result = await query.FirstOrDefaultAsync();
+
+            //var query = from teacher in ParseObject.GetQuery("Teachers")
+            //            where teacher.Get<int>("TeacherId") == teacherId
+            //            select teacher;
+            //var result = (ITeachers)await query.FirstAsync();
 
             return result;
         }
 
+    }
+
+    [ParseClassName("Teachers")]
+    public class Teachers : ParseObject, ITeachers
+    {
+        [ParseFieldName("TeacherId")]
+        public int TeacherId
+        {
+            get { return GetProperty<int>(); }
+            set { SetProperty<int>(value); }
+        }
+
+        [ParseFieldName("Fullname")]
+        public string Fullname
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("Username")]
+        public string Username
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("Password")]
+        public string Password
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("Subject")]
+        public string Subject
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("Description")]
+        public string Description
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("Email")]
+        public string Email
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("PhoneNumber")]
+        public string PhoneNumber
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        [ParseFieldName("ImagePath")]
+        public string ImagePath
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
+        int ITeachers.GetTeacherId()
+        {
+            return TeacherId;
+        }
+
+        void ITeachers.SetTeacherId(int TeacherId)
+        {
+            this.TeacherId = TeacherId;
+        }
     }
 }

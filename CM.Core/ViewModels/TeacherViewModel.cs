@@ -11,22 +11,49 @@ namespace CM.Core.ViewModels
     public class TeacherViewModel : MvxViewModel
     {
         private readonly ITeacherService _teacherService;
-        private ITeachers _teacher;
 
         public TeacherViewModel(ITeacherService teacherService)
         {
             _teacherService = teacherService;
         }
 
-        public class Nav
+        public async void Init(int teacherId)
         {
-            public int Id { get; set; }
+            var result = await _teacherService.GetById(teacherId);
+
+            Teacher = result;
         }
 
-        public void Init(Nav navigation)
+        private ITeachers _teacher;
+        public ITeachers Teacher
         {
-            _teacher = _teacherService.GetById(navigation.Id);
+            get { return _teacher; }
+            set { _teacher = value; RaisePropertyChanged(() => Teacher); }
         }
+
+        //private readonly ITeacherService _collectionService;
+        //private ITeachers _item;
+
+        //public TeacherViewModel(ITeacherService collectionService)
+        //{
+        //    _collectionService = collectionService;
+        //}
+
+        //public class Nav
+        //{
+        //    public int Id { get; set; }
+        //}
+
+        //public void Init(Nav navigation)
+        //{
+        //    Item = (ITeachers)_collectionService.GetById(navigation.Id);
+        //}
+
+        //public ITeachers Item
+        //{
+        //    get { return _item; }
+        //    set { _item = value; RaisePropertyChanged(() => Item); }
+        //}
 
     }
 }

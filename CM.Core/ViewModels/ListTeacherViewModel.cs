@@ -10,13 +10,7 @@ namespace CM.Core.ViewModels
 {
     public class ListTeacherViewModel : MvxViewModel
     {
-        private string _hello = "Hello ListTeacherViewModel";
-        public string Hello
-        {
-            get { return _hello; }
-            set { _hello = value; RaisePropertyChanged(() => Hello); }
-        }
-
+        
         private readonly ITeacherService _teacherService;
 
         public ListTeacherViewModel(ITeacherService teacherService)
@@ -44,15 +38,16 @@ namespace CM.Core.ViewModels
         {
             get
             {
-                _viewDetailTeacher = _viewDetailTeacher ?? new MvxCommand(DoViewDetailTeacher);
-                return _viewDetailTeacher;
+                //_viewDetailTeacher = _viewDetailTeacher ?? new MvxCommand(DoViewDetailTeacher);
+                //return _viewDetailTeacher;
+                //return new MvxCommand<ITeachers>(item => ShowViewModel<TeacherViewModel>(new TeacherViewModel.Nav() { Id = item.GetTeacherId() }));
+                return new MvxCommand<ITeachers>(item => ShowViewModel<TeacherViewModel>(new { teacherId = item.GetTeacherId() }));
             }
         }
 
         private void DoViewDetailTeacher()
         {
-            //TeacherViewModel t = _teacherService.SelectTeacherByKey(1);
-            ShowViewModel<TeacherViewModel>();
+            ShowViewModel<TeacherViewModel>(new { teacherId = 101 });
         }
         
     }

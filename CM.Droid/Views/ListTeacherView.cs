@@ -6,7 +6,7 @@ using Cirrious.MvvmCross.Droid.Views;
 
 namespace CM.Droid.Views
 {
-    [Activity(Label = "View for ListTeacherViewModel")]
+    [Activity(Label = "Danh sách Giáo viên")]
     public class ListTeacherView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)

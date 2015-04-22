@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace CM.Core.Services
 {
-    public interface ITeachers 
+    public interface IStudentService
     {
-        int GetTeacherId();
-        void SetTeacherId(int TeacherId);
+        //Task<IEnumerable<ITeachers>> GetTeachers();
     }
 }

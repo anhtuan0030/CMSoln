@@ -87,9 +87,6 @@ namespace CM.Droid
 			// aapt resource value: 0x7f040000
 			public const int MvxBindingTagUnique = 2130968576;
 			
-			// aapt resource value: 0x7f040002
-			public const int editText1 = 2130968578;
-			
 			// aapt resource value: 0x7f040001
 			public const int listViewTeacher = 2130968577;
 			
@@ -107,28 +104,19 @@ namespace CM.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int CourseView = 2130903040;
+			public const int FirstView = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int FirstView = 2130903041;
+			public const int item_Teacher = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int item_Teacher = 2130903042;
+			public const int ListTeacherView = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int ListTeacherView = 2130903043;
+			public const int SplashScreen = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int SplashScreen = 2130903044;
-			
-			// aapt resource value: 0x7f030005
-			public const int StudentView = 2130903045;
-			
-			// aapt resource value: 0x7f030006
-			public const int TeacherDetailView = 2130903046;
-			
-			// aapt resource value: 0x7f030007
-			public const int TeacherView = 2130903047;
+			public const int TeacherView = 2130903044;
 			
 			static Layout()
 			{
