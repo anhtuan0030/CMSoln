@@ -10,25 +10,26 @@ namespace CM.Core.ViewModels
 {
     public class StudentViewModel : MvxViewModel
     {
-        private readonly IStudentService _teacherService;
+        private readonly IStudentService _studentService;
 
-        public StudentViewModel(IStudentService teacherService)
+        public StudentViewModel(IStudentService studentService)
         {
-            _teacherService = teacherService;
+            _studentService = studentService;
         }
 
-        public async void Init(int teacherId)
+        public async void Init()
         {
-            var result = await _teacherService.GetById(teacherId);
+            var studentId = 1;
+            var result = await _studentService.GetById(studentId);
 
-            Teacher = result;
+            Student = result;
         }
 
-        private IStudent _teacher;
-        public IStudent Teacher
+        private IStudents _student;
+        public IStudents Student
         {
-            get { return _teacher; }
-            set { _teacher = value; RaisePropertyChanged(() => Teacher); }
+            get { return _student; }
+            set { _student = value; RaisePropertyChanged(() => Student); }
         }
     }
 }

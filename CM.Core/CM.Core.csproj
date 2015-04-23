@@ -39,18 +39,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Converters\DateValueConverter.cs" />
+    <Compile Include="Converters\DateOfBirthValueConverter.cs" />
     <Compile Include="Converters\TimeAgoValueConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IStudent.cs" />
+    <Compile Include="Services\ICourses.cs" />
+    <Compile Include="Services\IStudents.cs" />
+    <Compile Include="Services\ICourseService.cs" />
     <Compile Include="Services\ITeachers.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Services\ITeacherService.cs" />
     <Compile Include="Services\IStudentService.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
+    <Compile Include="ViewModels\CourseViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />
     <Compile Include="ViewModels\TeacherDetailViewModel.cs" />
     <Compile Include="ViewModels\ListTeacherViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\TeacherViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

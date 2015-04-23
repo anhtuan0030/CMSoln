@@ -49,6 +49,25 @@ namespace CM.Core.ViewModels
         {
             ShowViewModel<TeacherViewModel>(new { teacherId = 101 });
         }
+
+
+
+        MvxCommand _helloCommand;
+        public System.Windows.Input.ICommand HelloCommand
+        {
+            get
+            {
+                _helloCommand = _helloCommand ?? new MvxCommand(DoHelloCommand);
+                return _helloCommand;
+            }
+        }
+
+        private void DoHelloCommand()
+        {
+            
+        }
+
         
+
     }
 }

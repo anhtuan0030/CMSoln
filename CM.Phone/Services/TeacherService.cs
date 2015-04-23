@@ -7,53 +7,45 @@ using System.Threading.Tasks;
 
 namespace CM.Core.Services
 {
-    public class StudentService: IStudentService
+    public class TeacherService: ITeacherService
     {
         private const string AppKey = "HBRj11q16Ma3RjHgYbEkvlqCJXf9M6ukw0jJcfsT";
         private const string AppRestKey = "qRht3wqVKvISvnsm20Z2K960dqZfn9cBBa4fxl00";
         private const string DotNetKey = "HwCpVJvemedpvSIIYTve46Yp6QIkRQ9xirYfzHaV";
 
 
-        public StudentService()
+        public TeacherService()
         {
-            ParseObject.RegisterSubclass<Students>();
+            ParseObject.RegisterSubclass<Teachers>();
             ParseClient.Initialize(AppKey, DotNetKey);
         }
 
-        public async Task<IStudents> GetByUserName(string userName, string password)
+        public async Task<IEnumerable<ITeachers>> GetTeachers()
         {
-            var query = new ParseQuery<Students>();
-            query.WhereEqualTo("Username", userName);
-            query.WhereEqualTo("Password", password);
+            var query = new ParseQuery<Teachers>();
 
-            var result = await query.FirstOrDefaultAsync();
+            var result = await query.FindAsync();
 
             return result;
         }
 
-        public async Task<IStudents> GetById(int studentId)
+        public async Task<ITeachers> GetById(int teacherId)
         {
-            var query = from student in new ParseQuery<Students>()
-                        where student.StudentId == studentId
-                        select student;
+            var query = from teacher in new ParseQuery<Teachers>()
+                        where teacher.TeacherId == teacherId
+                        select teacher;
 
             var result = await query.FirstOrDefaultAsync();
 
             return result;
-        }
-
-        public void Insert(Students student)
-        {
-            Students objx = student;
-            objx.SaveAsync();
         }
     }
 
-    [ParseClassName("Students")]
-    public class Students : ParseObject, IStudents
+    [ParseClassName("Teachers")]
+    public class Teachers : ParseObject, ITeachers
     {
-        [ParseFieldName("StudentId")]
-        public int StudentId
+        [ParseFieldName("TeacherId")]
+        public int TeacherId
         {
             get { return GetProperty<int>(); }
             set { SetProperty<int>(value); }
@@ -66,8 +58,8 @@ namespace CM.Core.Services
             set { SetProperty<string>(value); }
         }
 
-        [ParseFieldName("UserName")]
-        public string UserName
+        [ParseFieldName("Username")]
+        public string Username
         {
             get { return GetProperty<string>(); }
             set { SetProperty<string>(value); }
@@ -80,11 +72,11 @@ namespace CM.Core.Services
             set { SetProperty<string>(value); }
         }
 
-        [ParseFieldName("DoB")]
-        public DateTime DoB
+        [ParseFieldName("Subject")]
+        public string Subject
         {
-            get { return GetProperty<DateTime>(); }
-            set { SetProperty<DateTime>(value); }
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
         }
 
         [ParseFieldName("Description")]
@@ -115,15 +107,14 @@ namespace CM.Core.Services
             set { SetProperty<string>(value); }
         }
 
-
-        int IStudents.GetStudentId()
+        int ITeachers.GetTeacherId()
         {
-            return StudentId;
+            return TeacherId;
         }
 
-        void IStudents.SetStudentId(int studentId)
+        void ITeachers.SetTeacherId(int TeacherId)
         {
-            this.StudentId = studentId;
+            this.TeacherId = TeacherId;
         }
     }
 }

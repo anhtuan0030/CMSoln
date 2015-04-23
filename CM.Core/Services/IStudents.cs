@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace CM.Core.Services
 {
-    public interface IStudentService
+    public interface IStudents 
     {
-        Task<IStudents> GetByUserName(string userName, string password);
-
-        Task<IStudents> GetById(int studentId);
+        int GetStudentId();
+        void SetStudentId(int studentId);
     }
 }

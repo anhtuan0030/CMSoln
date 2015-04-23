@@ -1,4 +1,4 @@
-using Android.App;
+Ôªøusing Android.App;
 using Android.OS;
 using Android.Widget;
 using Cirrious.CrossCore;
@@ -7,13 +7,13 @@ using Cirrious.MvvmCross.Droid.Views;
 
 namespace CM.Droid.Views
 {
-    [Activity(Label = "Danh s·ch Gi·o viÍn")]
-    public class ListTeacherView : MvxActivity
+    [Activity(Label = "Kh√≥a h·ªçc c·ªßa T√¥i")]
+    public class CourseView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView(Resource.Layout.ListTeacherView);
+            SetContentView(Resource.Layout.CourseView);
         }
     }
 }
