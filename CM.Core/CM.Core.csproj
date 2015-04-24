@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Services\ITeacherService.cs" />
     <Compile Include="Services\IStudentService.cs" />
+    <Compile Include="Session.cs" />
     <Compile Include="ViewModels\FirstViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
     <Compile Include="ViewModels\StudentViewModel.cs" />

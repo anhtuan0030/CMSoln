@@ -16,8 +16,8 @@ namespace CM.Core
 
             //var result =  Mvx.Resolve<ITeacherService>();
 
-            RegisterAppStart<ViewModels.ListTeacherViewModel>();
-            //RegisterAppStart<ViewModels.CourseViewModel>();
+            //RegisterAppStart<ViewModels.ListTeacherViewModel>();
+            RegisterAppStart<ViewModels.LoginViewModel>();
         }
     }
 }

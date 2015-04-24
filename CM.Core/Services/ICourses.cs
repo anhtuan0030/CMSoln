@@ -12,5 +12,8 @@ namespace CM.Core.Services
         void SetStudentId(int studentId);
         int GetTeacherId();
         void SetTeacherId(int teacherId);
+
+        //string GetTeacherName();
+        //void SetTeacherName(int teacherId);
     }
 }

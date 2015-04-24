@@ -10,5 +10,8 @@ namespace CM.Core.Services
     {
         int GetTeacherId();
         void SetTeacherId(int teacherId);
+
+        string GetFullname();
+        string GetSubject();
     }
 }

@@ -19,7 +19,7 @@ namespace CM.Core.ViewModels
 
         public async void Init()
         {
-            var studentId = 1;
+            var studentId = int.Parse(Session.Dictionary["StudentId"].ToString());
             var result = await _courseService.GetCourses(studentId);
 
             ListData = result.ToList();
@@ -31,5 +31,7 @@ namespace CM.Core.ViewModels
             get { return _course; }
             set { _course = value; RaisePropertyChanged(() => ListData); }
         }
+
+        
     }
 }

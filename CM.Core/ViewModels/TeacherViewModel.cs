@@ -47,7 +47,7 @@ namespace CM.Core.ViewModels
         private void DoRegisterCourse()
         {
             var teacherId = Teacher.GetTeacherId();
-            var studentId = 1;
+            var studentId = int.Parse(Session.Dictionary["StudentId"].ToString());
             _courseService.RegisterCourses(teacherId, studentId);
 
             ShowViewModel<CourseViewModel>();

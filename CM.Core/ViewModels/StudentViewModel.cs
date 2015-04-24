@@ -19,9 +19,8 @@ namespace CM.Core.ViewModels
 
         public async void Init()
         {
-            var studentId = 1;
+            int studentId = int.Parse(Session.Dictionary["StudentId"].ToString());
             var result = await _studentService.GetById(studentId);
-
             Student = result;
         }
 
