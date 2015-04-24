@@ -9,6 +9,6 @@ namespace CM.Core.Services
     public interface ICourseService
     {
         Task<IEnumerable<ICourses>> GetCourses(int studentId);
-        void RegisterCourses(ICourses courses);
+        void RegisterCourses(int teacherId, int studentId);
     }
 }

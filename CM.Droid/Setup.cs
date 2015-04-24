@@ -37,6 +37,7 @@ namespace CM.Droid
 
             Mvx.RegisterType(typeof(ITeacherService), typeof(TeacherService));
             Mvx.RegisterType(typeof(IStudentService), typeof(StudentService));
+            Mvx.RegisterType(typeof(ICourseService), typeof(CourseService));
 
             //var result = Mvx.Resolve<ITeacherService>();
         }

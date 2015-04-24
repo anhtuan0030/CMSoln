@@ -13,19 +13,15 @@
         android:layout_height="wrap_content"
         local:MvxBind="ItemsSource ListData; ItemClick ViewDetailTeacher"
         local:MvxItemTemplate="@layout/item_teacher" />
-    <LinearLayout
+<!--<LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:id="@+id/linearLayout1">
-        <ImageView
-            android:src="@drawable/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/imageView1"
-            local:MvxBind="Click HelloCommand" />
+        
         <ImageView
             android:src="@android:drawable/ic_menu_gallery"
             android:layout_width="wrap_content"
@@ -41,5 +37,5 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/imageView4" />
-    </LinearLayout>
+    </LinearLayout>-->
 </LinearLayout>

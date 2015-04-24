@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="CM.Droid" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
 	<uses-sdk android:minSdkVersion="10" />
-	<application android:icon="@drawable/Icon" android:label="CourseManagement"></application>
+	<application android:icon="@drawable/Icon" android:label="Quản lý dạy kèm"></application>
 	<uses-permission android:name="android.permission.INTERNET" />
 </manifest>

@@ -11,10 +11,12 @@ namespace CM.Core.ViewModels
     public class TeacherViewModel : MvxViewModel
     {
         private readonly ITeacherService _teacherService;
+        private readonly ICourseService _courseService;
 
-        public TeacherViewModel(ITeacherService teacherService)
+        public TeacherViewModel(ITeacherService teacherService, ICourseService courseService)
         {
             _teacherService = teacherService;
+            _courseService = courseService;
         }
 
         public async void Init(int teacherId)
@@ -30,6 +32,27 @@ namespace CM.Core.ViewModels
             get { return _teacher; }
             set { _teacher = value; RaisePropertyChanged(() => Teacher); }
         }
+
+
+        MvxCommand _registerCourse;
+        public System.Windows.Input.ICommand RegisterCourse
+        {
+            get
+            {
+                _registerCourse = _registerCourse ?? new MvxCommand(DoRegisterCourse);
+                return _registerCourse;
+            }
+        }
+
+        private void DoRegisterCourse()
+        {
+            var teacherId = Teacher.GetTeacherId();
+            var studentId = 1;
+            _courseService.RegisterCourses(teacherId, studentId);
+
+            ShowViewModel<CourseViewModel>();
+        }
+
 
         //private readonly ITeacherService _collectionService;
         //private ITeachers _item;

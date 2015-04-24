@@ -13,7 +13,6 @@ namespace CM.Core.Services
         private const string AppRestKey = "qRht3wqVKvISvnsm20Z2K960dqZfn9cBBa4fxl00";
         private const string DotNetKey = "HwCpVJvemedpvSIIYTve46Yp6QIkRQ9xirYfzHaV";
 
-
         public CourseService()
         {
             ParseObject.RegisterSubclass<Courses>();
@@ -22,17 +21,32 @@ namespace CM.Core.Services
 
         public async Task<IEnumerable<ICourses>> GetCourses(int studentId)
         {
-            var query = new ParseQuery<Courses>();
-            query.WhereEqualTo("StudentId", studentId);
+            var courseQuery = from c in new ParseQuery<Courses>().Include("Teachers")
+                              where c.Get<int>("StudentId") == studentId
+                              select c;
 
-            var result = await query.FindAsync();
+            var userQuery = from t in new ParseQuery<Teachers>().Include("Courses")
+                            join c in courseQuery on t["TeacherId"] equals c["TeacherId"]
+                            select t;
+
+            //IEnumerable<ParseUser> results = await userQuery.FindAsync();
+
+            //var query = new ParseQuery<Courses>();
+            //query.WhereEqualTo("StudentId", studentId);
+
+            var result = await courseQuery.FindAsync();
 
             return result;
         }
 
-        public void RegisterCourses(ICourses courses)
+        public void RegisterCourses(int teacherId, int studentId)
         {
-            Courses objx = (Courses)courses;
+            Courses objx = new Courses
+            {
+                TeacherId = teacherId,
+                StudentId = studentId,
+                Status = 1
+            };
             objx.SaveAsync();
         }
 
@@ -109,6 +123,5 @@ namespace CM.Core.Services
         {
             this.StudentId = studentId;
         }
-
     }
 }

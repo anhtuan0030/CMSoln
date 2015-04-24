@@ -7,7 +7,7 @@
     <Mvx.MvxImageView
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:layout_margin="10dp"
+        android:layout_margin="5dp"
         android:background="@drawable/dummy_avatar" />
     <LinearLayout
         android:orientation="vertical"
@@ -18,20 +18,30 @@
             android:layout_height="wrap_content"
             android:textSize="40dp"
             local:MvxBind="Text TeacherId" />
+    <!--<TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            local:MvxBind="Text StudentId" />-->
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            local:MvxBind="Text StudentId" />
+            local:MvxBind="Text StartDate" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            local:MvxBind="Text StartDate, Converter = Date" />
+            local:MvxBind="Text Endate" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            local:MvxBind="Text Endate, Converter = Date" />
+            local:MvxBind="Text Status" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            local:MvxBind="Text Status, Converter = CourseStatus" />
     </LinearLayout>
 </LinearLayout>
