@@ -15,5 +15,12 @@ namespace CM.Droid.Views
             base.OnCreate(bundle);
             SetContentView(Resource.Layout.ListTeacherView);
         }
+
+        public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
+        {
+            var inflater = MenuInflater;
+            //inflater.Inflate(Android.Resource.Menu)
+            return true;
+        }
     }
 }

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item android:id="@+id/accountInfo"
+            android:title="Thông tin" />
+  <item android:id="@+id/myCourse"
+        android:title="Khóa học" />
+  <item android:id="@+id/teacher"
+        android:title="Giáo viên" />
+</menu>

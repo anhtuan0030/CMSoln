@@ -17,7 +17,17 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="40dp"
-            local:MvxBind="Text TeacherId" />
+            local:MvxBind="Text Fullname" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            local:MvxBind="Text Subject" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            local:MvxBind="Text Subject" />
     <!--<TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -27,17 +37,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:textSize="20dp"
-            local:MvxBind="Text StartDate" />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            local:MvxBind="Text Endate" />
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            local:MvxBind="Text Status" />
+            local:MvxBind="Text Schedule" />
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

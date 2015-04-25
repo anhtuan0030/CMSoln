@@ -164,6 +164,9 @@
     <AndroidResource Include="Resources\drawable\ab_background.xml" />
     <AndroidResource Include="Resources\drawable\ic_action_logo.png" />
     <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\layout\Menu.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
     <Content Include="ToDo-MvvmCross\_ Droid UI.txt" />
   </ItemGroup>
   <ItemGroup>

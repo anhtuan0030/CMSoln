@@ -16,15 +16,15 @@ namespace CM.Core.Services
 
         public StudentService()
         {
-            ParseObject.RegisterSubclass<Student>();
+            ParseObject.RegisterSubclass<Students>();
             ParseClient.Initialize(AppKey, DotNetKey);
         }
 
         public async Task<IStudents> GetByUserName(string userName, string password)
         {
-            var query = from student in new ParseQuery<Student>()
-                        where student.UserName == userName
-                        select student;
+            var query = new ParseQuery<Students>();
+            query.WhereEqualTo("Username", userName);
+            query.WhereEqualTo("Password", password);
 
             var result = await query.FirstOrDefaultAsync();
 
@@ -33,7 +33,7 @@ namespace CM.Core.Services
 
         public async Task<IStudents> GetById(int studentId)
         {
-            var query = from student in new ParseQuery<Student>()
+            var query = from student in new ParseQuery<Students>()
                         where student.StudentId == studentId
                         select student;
 
@@ -41,19 +41,31 @@ namespace CM.Core.Services
 
             return result;
         }
+
+        public void Insert(Students student)
+        {
+            Students objx = student;
+            objx.SaveAsync();
+        }
     }
 
-    [ParseClassName("Student")]
-    public class Student : ParseObject, IStudents
+    [ParseClassName("Students")]
+    public class Students : ParseObject, IStudents
     {
-
-
         [ParseFieldName("StudentId")]
         public int StudentId
         {
             get { return GetProperty<int>(); }
             set { SetProperty<int>(value); }
         }
+
+        [ParseFieldName("Fullname")]
+        public string Fullname
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty<string>(value); }
+        }
+
         [ParseFieldName("UserName")]
         public string UserName
         {
@@ -68,22 +80,15 @@ namespace CM.Core.Services
             set { SetProperty<string>(value); }
         }
 
-        [ParseFieldName("FullName")]
-        public string FullName
-        {
-            get { return GetProperty<string>(); }
-            set { SetProperty<string>(value); }
-        }
-
-        [ParseFieldName("DOB")]
-        public DateTime DOB
+        [ParseFieldName("DoB")]
+        public DateTime DoB
         {
             get { return GetProperty<DateTime>(); }
             set { SetProperty<DateTime>(value); }
         }
 
-        [ParseFieldName("ImagePath")]
-        public string ImagePath
+        [ParseFieldName("Description")]
+        public string Description
         {
             get { return GetProperty<string>(); }
             set { SetProperty<string>(value); }
@@ -96,7 +101,6 @@ namespace CM.Core.Services
             set { SetProperty<string>(value); }
         }
 
-
         [ParseFieldName("PhoneNumber")]
         public string PhoneNumber
         {
@@ -104,12 +108,13 @@ namespace CM.Core.Services
             set { SetProperty<string>(value); }
         }
 
-        [ParseFieldName("Description")]
-        public string Description
+        [ParseFieldName("ImagePath")]
+        public string ImagePath
         {
             get { return GetProperty<string>(); }
             set { SetProperty<string>(value); }
         }
+
 
         int IStudents.GetStudentId()
         {

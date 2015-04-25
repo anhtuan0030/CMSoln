@@ -116,5 +116,15 @@ namespace CM.Core.Services
         {
             this.TeacherId = TeacherId;
         }
+
+        string ITeachers.GetFullname()
+        {
+            return Fullname;
+        }
+
+        string ITeachers.GetSubject()
+        {
+            return Subject;
+        }
     }
 }
